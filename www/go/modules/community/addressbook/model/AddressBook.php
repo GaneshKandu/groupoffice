@@ -79,7 +79,7 @@ class AddressBook extends \go\core\acl\model\AclOwnerEntity {
 
 	protected function canCreate(): bool
 	{
-		return \go\core\model\Module::findByName('community', 'addressbook')->hasPermissionLevel(Acl::LEVEL_MANAGE);
+		return \go\core\model\Module::findByName('community', 'addressbook')->getUserRights()->mayChangeAddressbooks;
 	}
 
 

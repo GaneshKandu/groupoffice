@@ -67,6 +67,9 @@ function finishLogin(Token $token, string $rememberMeToken = null) {
 try {
 //Create the app with the config.php file
 	App::get()->setAuthState(new State());
+
+	go()->debug(file_get_contents('php://input'));
+
 	go()->getDebugger()->group("auth");
 	$auth = new Authenticate();
 
